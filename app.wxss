@@ -1,0 +1,17 @@
+page {
+    font-family: "PingFangSC-Thin", "Microsoft YaHei";
+    font-size: 32rpx;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+    content: '';
+    height: 0;
+    display: block;
+    visibility: none;
+}
+

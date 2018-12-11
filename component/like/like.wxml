@@ -1,0 +1,4 @@
+<view class="container" catch:tap="onLikeTap">
+    <image src="{{like?yesSrc:noSrc}}" mode="widthFix"/>
+    <text>{{count}}</text>
+</view>

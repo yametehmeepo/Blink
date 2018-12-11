@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "留风",
+  "usingComponents": {
+    "v-like": "/component/like/like"
+  }
+}
