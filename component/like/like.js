@@ -27,7 +27,12 @@ Component({
      */
     methods: {
         onLikeTap: function (e) {
-            console.log(e)
+            let like = this.properties.like
+            let count = this.properties.count
+            this.setData({
+                like: !like,
+                count: like ? count - 1 : count + 1
+            })
         }
     }
 })
