@@ -1,0 +1,11 @@
+<wxs src="./index.wxs" module="tools"></wxs>
+<view class="container">
+    <view class="index">
+        <text class="index-no">No.</text>
+        <text class="index-number">{{tools.handler(index)}}</text>
+    </view>
+    <view class="yearmonth">
+        <text class="month">{{month}}</text>
+        <text class="year">{{year}}</text>
+    </view>
+</view>

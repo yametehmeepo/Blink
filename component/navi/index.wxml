@@ -1,0 +1,5 @@
+<view class="container">
+    <image bind:tap="onNext" class="prev" mode="widthFix" src="{{hasNext?nextSrc:nextDisSrc}}"/>
+    <text class="title">{{title}}</text>
+    <image bind:tap="onPrev" class="next" mode="widthFix" src="{{hasPrev?prevSrc:prevDisSrc}}"/>
+</view>

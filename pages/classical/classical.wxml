@@ -1,4 +1,12 @@
-<!--pages/classical/classical.wxml-->
-<view>
-    <v-like/>
+<view class="container">
+    <view class="header">
+        <v-periodical index="{{index}}"/>
+        <view class="right">
+            <v-like bindlike="like" like="{{like_status}}" count="{{fav_nums}}"/>
+            <v-share/>
+        </view>
+    </view>
+    <v-movie image="{{image}}" content="{{content}}" type="{{type}}"/>
+    <v-navi bindprev="onPrevTap" bindnext="onNextTap" class="navi" title="{{title}}" hasPrev="{{hasPrev}}" hasNext="{{hasNext}}"/>
 </view>
+

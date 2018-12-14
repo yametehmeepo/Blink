@@ -1,6 +1,10 @@
 {
   "navigationBarTitleText": "留风",
   "usingComponents": {
-    "v-like": "/component/like/like"
+    "v-like": "/component/like/index",
+    "v-movie": "/component/classical/movie/index",
+    "v-periodical": "/component/classical/periodical/index",
+    "v-share": "/component/classical/share/index",
+    "v-navi": "/component/navi/index"
   }
 }

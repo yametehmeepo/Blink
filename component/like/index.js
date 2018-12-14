@@ -27,12 +27,10 @@ Component({
      */
     methods: {
         onLikeTap: function (e) {
-            let like = this.properties.like
-            let count = this.properties.count
-            this.setData({
-                like: !like,
-                count: like ? count - 1 : count + 1
-            })
+            let behavior = !this.data.like
+            this.triggerEvent('like', {
+                like: behavior
+            }, {})
         }
     }
 })

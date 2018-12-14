@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="imagewrap">
+        <image class="{{type==200?'music-image':'full-image'}}" src="{{image}}" mode="widthFix"/>
+        <block wx:if="{{type==200}}">
+            <image class="playBtn" src="{{playSrc}}"/>
+        </block>
+        <image class="tag" src="{{type==100?movieTag:(type==200?musicTag:verseTag)}}" mode="widthFix"/>
+    </view>
+    <text class="content">{{content}}</text>
+</view>

@@ -24,12 +24,13 @@ export class HTTP {
             method: parm.method,
             data: parm.data,
             header: {
-                appkey: config.appkey
+                "Content-Type": "application/json",
+                "appkey": config.appkey
             },
             success: (res) => {
                 let httpcode = res.statusCode.toString()
                 if (httpcode.startsWith('2')) {
-                    parm.success(res.data)
+                    parm.success && parm.success(res.data)
                 } else {
                     let error_code = res.data.error_code
                     this._show_errorMsg(error_code)

@@ -1,0 +1,16 @@
+.container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 588rpx;
+    background-color: #f7f7f7;
+}
+
+.title {
+    font-size: 26rpx;
+}
+
+.prev, .next {
+    width: 80rpx;
+}

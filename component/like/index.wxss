@@ -2,16 +2,17 @@
 .container {
     display: flex;
     flex-direction: row;
-    padding: 10rpx 0 0;
+    padding: 10rpx 0 10rpx;
 }
 
 .container image {
     width: 32rpx;
+    margin-right: 2px;
 }
 
 .container text {
     position: relative;
-    bottom: 10rpx;
+    bottom: 8rpx;
     font-size: 20rpx;
     line-height: 1;
     color: #c0c0c0;

@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.index {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    color: #000;
+    padding: 0 12rpx 0 0;
+    margin: 0 15rpx 0 0;
+}
+
+.index:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 40rpx;
+    background: #000;
+    content: "";
+}
+
+.index-no {
+    font-size: 26rpx;
+    line-height: 1;
+}
+
+.index-number {
+    position: relative;
+    font-size: 50rpx;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.yearmonth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.year {
+    font-size: 18rpx;
+    line-height: 1;
+    margin-top: 5rpx;
+}
+
+.month {
+    font-size: 22rpx;
+    line-height: 1;
+    margin-top: 2px;
+}

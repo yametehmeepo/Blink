@@ -1,0 +1,17 @@
+.container {
+    width: 28rpx;
+    margin: 0 0 0 40rpx;
+}
+
+.container button {
+    border: none;
+    width: 28rpx;
+    height: 28rpx;
+    padding: 0;
+    line-height: 0;
+    border-radius: 0;
+}
+
+.container image {
+    width: 100%;
+}
