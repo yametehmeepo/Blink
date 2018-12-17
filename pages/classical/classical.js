@@ -4,7 +4,7 @@ import LikeModel from "../../models/like.js"
 
 let classicalmodel = new ClassicalModel()
 let likemodel = new LikeModel()
-
+const BAPManager = wx.getBackgroundAudioManager()
 
 Page({
 
@@ -13,18 +13,43 @@ Page({
      */
     data: {
         hasNext: false,
-        hasPrev: true
+        hasPrev: true,
+        isPlay: false,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
         classicalmodel.getLatest(res => {
             this.setData({
                 ...res,
                 hasPrev: classicalmodel._hasPrev(res.index)
+            })
+        })
+        BAPManager.onPlay(() => {
+            let currentPlay = BAPManager.src == this.data.url
+            this.setData({
+                isPlay: true,
+                currentPlay: currentPlay
+            })
+        })
+        BAPManager.onPause(() => {
+            this.setData({
+                isPlay: false,
+                currentPlay: false
+            })
+        })
+        BAPManager.onStop(() => {
+            this.setData({
+                isPlay: false,
+                currentPlay: false
+            })
+        })
+        BAPManager.onEnded(() => {
+            this.setData({
+                isPlay: false,
+                currentPlay: false
             })
         })
     },
@@ -78,24 +103,55 @@ Page({
     },
     _updateClassical(NextOrPrev) {
         classicalmodel.getClassical(this.data.index, NextOrPrev, res => {
+            let currentPlay = BAPManager.src == res.url && this.data.isPlay
             this.setData({
                 ...res,
                 hasPrev: classicalmodel._hasPrev(res.index),
-                hasNext: classicalmodel._hasNext(res.index)
+                hasNext: classicalmodel._hasNext(res.index),
+                currentPlay: currentPlay
             })
         })
     },
     _check(index) {
         let res = classicalmodel._checkStorage(index)
         if (res) {
+            let currentPlay = BAPManager.src == res.url && this.data.isPlay
             this.setData({
                 ...res,
                 hasPrev: classicalmodel._hasPrev(res.index),
-                hasNext: classicalmodel._hasNext(res.index)
+                hasNext: classicalmodel._hasNext(res.index),
+                currentPlay: currentPlay
             })
             return true
         } else {
             return false
         }
+    },
+    play() {
+        const {isPlay, currentPlay, title, url} = this.data
+        if (isPlay) {
+            if (currentPlay) {
+                BAPManager.pause()
+                this.setData({
+                    isPlay: false,
+                    currentPlay: false
+                })
+            } else {
+                BAPManager.title = this.data.title
+                BAPManager.src = this.data.url
+                this.setData({
+                    isPlay: true,
+                    currentPlay: true
+                })
+            }
+        } else {
+            BAPManager.title = this.data.title
+            BAPManager.src = this.data.url
+            this.setData({
+                isPlay: true,
+                currentPlay: true
+            })
+        }
+
     }
 })

@@ -3,6 +3,8 @@
   "usingComponents": {
     "v-like": "/component/like/index",
     "v-movie": "/component/classical/movie/index",
+    "v-music": "/component/classical/music/index",
+    "v-verse": "/component/classical/verse/index",
     "v-periodical": "/component/classical/periodical/index",
     "v-share": "/component/classical/share/index",
     "v-navi": "/component/navi/index"

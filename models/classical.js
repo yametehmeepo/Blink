@@ -7,10 +7,7 @@ export class ClassicalModel extends HTTP {
             success: res => {
                 callback(res)
                 this._setLatestIndex(res.index)
-                let classicals = this._getClassicals('classicals')
-                if (!classicals.length) {
-                    this._setClassicals([res])
-                }
+                this._setClassicals(res.index, res)
             }
         })
     }
@@ -20,9 +17,7 @@ export class ClassicalModel extends HTTP {
             url: `/classic/${type}/${id}`,
             success: res => {
                 callback(res)
-                let classicals = this._getClassicals('classicals')
-                let filterclassicals = classicals.filter(i => i.index != index)
-                this._setClassicals([...filterclassicals, res])
+                this._setClassicals(res.index, res)
             }
         })
     }
@@ -32,8 +27,7 @@ export class ClassicalModel extends HTTP {
             url: `/classic/${index}/${NextOrPrev}`,
             success: res => {
                 callback(res)
-                let classicals = this._getClassicals('classicals')
-                this._setClassicals([...classicals, res])
+                this._setClassicals(res.index, res)
             }
         })
     }
@@ -55,16 +49,17 @@ export class ClassicalModel extends HTTP {
         return wx.getStorageSync('latsestIndex')
     }
 
-    _getClassicals() {
-        return wx.getStorageSync('classicals');
+    _getClassicals(index) {
+        let key = 'classical-' + index
+        return wx.getStorageSync(key);
     }
 
-    _setClassicals(arr) {
-        wx.setStorageSync('classicals', arr);
+    _setClassicals(index, value) {
+        let key = 'classical-' + index
+        wx.setStorageSync(key, value);
     }
 
     _checkStorage(index) {
-        let classicals = this._getClassicals('classicals')
-        return classicals.find(i => i.index == index)
+        return this._getClassicals(index)
     }
 }

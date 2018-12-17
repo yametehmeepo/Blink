@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.imagewrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 750rpx;
+    height: 500rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-image {
+    width: 750rpx;
+    height: 500rpx;
+}
+
+.tag {
+    width: 46rpx;
+    position: absolute;
+    bottom: -82rpx;
+    left: 30rpx;
+}
+
+.content {
+    font-size: 17px;
+    line-height: 24px;
+    color: #0e0e0e;
+    max-width: 550rpx;
+    margin-top: 110rpx;
+}

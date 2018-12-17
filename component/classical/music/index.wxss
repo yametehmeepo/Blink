@@ -1,1 +1,29 @@
-/* component/classical/music/index.wxss */
+@import '../common.wxss';
+
+.music-image {
+    width: 400rpx;
+    height: 400rpx;
+    border-radius: 50%;
+}
+
+.playBtn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.rotation {
+    animation: rotation 12s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

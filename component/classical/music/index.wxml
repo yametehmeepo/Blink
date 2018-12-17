@@ -1,5 +1,8 @@
 <view class="container">
-    <image class="image" src="{{image}}" mode="widthFix"/>
-    <image class="tag" src="../../images/movie@tag.png" mode="widthFix"/>
+    <view class="imagewrap">
+        <image class="music-image {{currentPlay?'rotation':''}}" src="{{image}}" mode="widthFix"/>
+        <image class="playBtn" src="{{!currentPlay?playSrc:pauseSrc}}" bind:tap="onPlayTap"/>
+        <image class="tag" src="/component/images/music@tag.png" mode="widthFix"/>
+    </view>
     <text class="content">{{content}}</text>
 </view>

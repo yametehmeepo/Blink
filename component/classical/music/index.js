@@ -1,11 +1,14 @@
-// component/classical/music/index.js
+import classcialBeh from '../classical-BEH.js'
+
+const BAPManager = wx.getBackgroundAudioManager()
 Component({
     /**
      * 组件的属性列表
      */
+    behaviors: [classcialBeh],
     properties: {
-        image: String,
-        content: String
+        url: String,
+        currentPlay: Boolean
     },
 
     /**
@@ -15,9 +18,16 @@ Component({
         playSrc: '/component/images/play.png',
         pauseSrc: '/component/images/pause.png'
     },
-
+    lifetimes: {
+        attached() {
+        }
+    },
     /**
      * 组件的方法列表
      */
-    methods: {}
+    methods: {
+        onPlayTap: function (e) {
+            this.triggerEvent('play', {}, {})
+        }
+    }
 })

@@ -1,7 +1,7 @@
 <view class="container">
     <view class="imagewrap">
         <image class="full-image" src="{{image}}" mode="widthFix"/>
-        <image class="tag" src="/component/images/movie@tag.png" mode="widthFix"/>
+        <image class="tag" src="/component/images/verse@tag.png" mode="widthFix"/>
     </view>
     <text class="content">{{content}}</text>
 </view>
