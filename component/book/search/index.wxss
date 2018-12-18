@@ -1,0 +1,19 @@
+.container {
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #f3f3f3;
+    background-color: #fff;
+    padding: 0 30rpx;
+}
+
+.container label {
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #f7f7f7;
+}

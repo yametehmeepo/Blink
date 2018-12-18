@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/classical/classical",
-    "pages/booklist/booklist",
-    "pages/like/like"
+    "pages/book/book",
+    "pages/like/like",
+    "pages/book/bookDetail/bookDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,7 +22,7 @@
         "selectedIconPath": "images/icon/classic@highlight.png"
       },
       {
-        "pagePath": "pages/booklist/booklist",
+        "pagePath": "pages/book/book",
         "text": "书单",
         "iconPath": "images/icon/book.png",
         "selectedIconPath": "images/icon/book@highlight.png"
@@ -35,6 +36,7 @@
     ],
     "color": "#c7c7c7",
     "selectedColor": "#000",
-    "borderStyle": "black"
+    "borderStyle": "black",
+    "backgroundColor": "#fff"
   }
 }

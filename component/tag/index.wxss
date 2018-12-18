@@ -1,0 +1,16 @@
+.comment-item {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #f7f7f7;
+    align-items: center;
+    height: 52rpx;
+    border-radius: 26px;
+    padding: 0 25rpx;
+    margin: 0 12rpx 20rpx 0;
+}
+
+.comment-item .content {
+    font-size: 24rpx;
+    color: #666666;
+    margin: 0 12rpx 0 0;
+}

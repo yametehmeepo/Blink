@@ -1,0 +1,17 @@
+<view class="wrap">
+    <view class="search">
+        <view class="search-inner">
+            <image src="/images/book/search.png" mode="widthFix"/>
+            <text>搜索图书名称</text>
+        </view>
+    </view>
+    <view class="title">
+        <image src="/images/book/choiceness.png" mode="widthFix"/>
+    </view>
+    <view class="container">
+        <block wx:for="{{books}}" wx:key="id">
+            <v-book bookid="{{item.id}}" title="{{item.title}}" image="{{item.image}}" author="{{item.author}}"
+                    like="{{item.fav_nums}}"/>
+        </block>
+    </view>
+</view>

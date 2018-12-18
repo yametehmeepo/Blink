@@ -1,0 +1,55 @@
+.container {
+    width: 240rpx;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /*border-radius: 4px;*/
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 60rpx;
+    background: #fff;
+}
+
+.img {
+    width: 240rpx;
+    height: 360rpx;
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 16rpx 20rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 24rpx;
+    line-height: 32rpx;
+    color: #1f1f1f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.author {
+    font-size: 20rpx;
+    line-height: 28rpx;
+    color: #999999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.like {
+    font-size: 20rpx;
+    line-height: 28rpx;
+    color: #bbbbbb;
+    margin-top: 18rpx;
+    text-align: right;
+}

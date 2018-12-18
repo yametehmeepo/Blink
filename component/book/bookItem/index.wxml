@@ -1,0 +1,8 @@
+<view class="container" bind:tap="onBookTap">
+    <image src="{{image}}" class="img"/>
+    <view class="content">
+        <text class="title">{{title}}</text>
+        <text class="author">{{author}}</text>
+        <text class="like">{{like}} 喜欢</text>
+    </view>
+</view>

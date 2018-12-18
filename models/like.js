@@ -2,7 +2,7 @@ import {HTTP} from "../util/http.js"
 
 export default class LikeModel extends HTTP {
     like(behavior, id, category, callback) {
-        let url = behavior ? '/like' : '/like/cancel'
+        const url = behavior ? '/like' : '/like/cancel'
         this.request({
             url: url,
             method: 'POST',
@@ -18,7 +18,7 @@ export default class LikeModel extends HTTP {
 
     getLikeStatus(id, category, callback) {
         this.request({
-            url: '/classic/' + category + '/' + id + '/favor',
+            url: `/classic/${category}/${id}/favor`,
             success: (res) => {
                 callback(res)
             }

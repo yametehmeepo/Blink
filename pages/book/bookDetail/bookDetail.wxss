@@ -1,0 +1,168 @@
+.container {
+    background-color: #f5f5f5;
+    margin-bottom: 88rpx;
+}
+
+.cover {
+    padding: 40rpx 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cover image {
+    width: 200rpx;
+    height: 288rpx;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 38rpx;
+    line-height: 1;
+    margin: 30rpx 0 15rpx;
+    font-weight: bold;
+}
+
+.author {
+    font-size: 28rpx;
+    line-height: 1;
+    color: #999999;
+}
+
+.comment {
+    margin-top: 20rpx;
+    background-color: #fff;
+    padding: 30rpx 30rpx 10rpx;
+}
+
+.comment .txt {
+    display: block;
+    font-size: 30rpx;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30rpx;
+    font-weight: bold;
+}
+
+
+.comment-item:nth-of-type(1) {
+    background-color: #fffadd;
+}
+
+.comment-item:nth-of-type(2) {
+    background-color: #eefaff;
+}
+
+
+.comment .nums {
+    font-size: 20rpx;
+    color: #bbbbbb;
+}
+
+.default-comment {
+    display: block;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.summary {
+    margin-top: 20rpx;
+    background-color: #fff;
+    padding: 30rpx 30rpx 20rpx;
+}
+
+.summary-title {
+    display: block;
+    font-size: 30rpx;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20rpx;
+    font-weight: bold;
+}
+
+.summary-content {
+    display: block;
+    font-size: 28rpx;
+    line-height: 44rpx;
+    color: #666666;
+    text-indent: 56rpx;
+}
+
+.book-info {
+    margin-top: 20rpx;
+    background-color: #fff;
+    padding: 30rpx 30rpx 20rpx;
+}
+
+.book-info-title {
+    display: block;
+    font-size: 30rpx;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20rpx;
+    font-weight: bold;
+}
+
+.book-info-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.book-info-content-left {
+    width: 100rpx;
+    font-size: 24rpx;
+    color: #999999;
+    line-height: 36rpx;
+}
+
+.book-info-content-right {
+    flex: 1;
+    font-size: 24rpx;
+    color: #666666;
+    line-height: 36rpx;
+}
+
+.footer {
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    height: 88rpx;
+    border-top: 1px solid #eeeeee;
+}
+
+.footer .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 410rpx;
+    height: 54rpx;
+    border: 1rpx solid #000000;
+    border-radius: 28rpx;
+    padding: 0 0 0 30rpx;
+}
+
+.footer .left image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 8rpx;
+}
+
+.footer .left text {
+    font-size: 24rpx;
+    color: #010101;
+}
+
+.footer .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

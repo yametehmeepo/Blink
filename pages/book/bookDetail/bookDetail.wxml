@@ -1,0 +1,59 @@
+<view class="container">
+    <view class="cover">
+        <image src="{{image}}" mode="widthFix"/>
+        <text class="title">{{title}}</text>
+        <text class="author">{{author}}</text>
+    </view>
+    <view class="comment">
+        <text class="txt">短评</text>
+        <view class="comment-container">
+            <block wx:if="{{!comments.length}}">
+                <text class="default-comment">还没有短评</text>
+            </block>
+            <block wx:else>
+                <block wx:for="{{comments}}" wx:key="{{index}}">
+                    <v-tag content="{{item.content}}">
+                        <text class="nums" slot="after">+{{item.nums}}</text>
+                    </v-tag>
+                </block>
+            </block>
+        </view>
+    </view>
+    <view class="summary">
+        <text class="summary-title">内容简介</text>
+        <text class="summary-content">{{summary}}</text>
+    </view>
+    <view class="book-info">
+        <text class="book-info-title">书本信息</text>
+        <view class="book-info-content">
+            <view class="book-info-content-left">出版社</view>
+            <view class="book-info-content-right">{{publisher}}</view>
+        </view>
+        <view class="book-info-content">
+            <view class="book-info-content-left">出版年</view>
+            <view class="book-info-content-right">{{pubdate}}</view>
+        </view>
+        <view class="book-info-content">
+            <view class="book-info-content-left">页数</view>
+            <view class="book-info-content-right">{{pages}}</view>
+        </view>
+        <view class="book-info-content">
+            <view class="book-info-content-left">定价</view>
+            <view class="book-info-content-right">{{price}}</view>
+        </view>
+        <view class="book-info-content">
+            <view class="book-info-content-left">装帧</view>
+            <view class="book-info-content-right">{{binding}}</view>
+        </view>
+    </view>
+    <view class="footer">
+        <view class="left">
+            <image src="/images/book/pencil.png"/>
+            <text>留下你的短评</text>
+        </view>
+        <view class="right">
+            <v-like bindlike="like" like="{{favor.like_status}}" count="{{favor.fav_nums}}"/>
+            <v-share/>
+        </view>
+    </view>
+</view>
