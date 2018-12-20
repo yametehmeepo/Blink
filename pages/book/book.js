@@ -7,7 +7,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        books: []
+        books: [],
+        isSearchPanelShow: false
     },
 
     /**
@@ -20,5 +21,15 @@ Page({
                     books: res
                 })
             })
+    },
+    onSearchTap(e) {
+        this.setData({
+            isSearchPanelShow: true
+        })
+    },
+    closeSearchPanel(e) {
+        this.setData({
+            isSearchPanelShow: false
+        })
     }
 })

@@ -1,3 +1,4 @@
+<wxs src="../../../util/filter.wxs" module="utils"/>
 <view class="container">
     <view class="cover">
         <image src="{{image}}" mode="widthFix"/>
@@ -11,8 +12,8 @@
                 <text class="default-comment">还没有短评</text>
             </block>
             <block wx:else>
-                <block wx:for="{{comments}}" wx:key="{{index}}">
-                    <v-tag content="{{item.content}}">
+                <block wx:for="{{utils.limit(comments, 15)}}" wx:key="{{index}}">
+                    <v-tag tag-class="{{style.foo(index)}}" content="{{item.content}}">
                         <text class="nums" slot="after">+{{item.nums}}</text>
                     </v-tag>
                 </block>
@@ -21,7 +22,7 @@
     </view>
     <view class="summary">
         <text class="summary-title">内容简介</text>
-        <text class="summary-content">{{summary}}</text>
+        <text class="summary-content" decode>{{utils.format(summary)}}</text>
     </view>
     <view class="book-info">
         <text class="book-info-title">书本信息</text>
@@ -46,14 +47,50 @@
             <view class="book-info-content-right">{{binding}}</view>
         </view>
     </view>
-    <view class="footer">
-        <view class="left">
-            <image src="/images/book/pencil.png"/>
-            <text>留下你的短评</text>
-        </view>
-        <view class="right">
-            <v-like bindlike="like" like="{{favor.like_status}}" count="{{favor.fav_nums}}"/>
-            <v-share/>
-        </view>
+</view>
+<view class="footer">
+    <view class="left" catch:tap="onCommentTap">
+        <image src="/images/book/pencil.png"/>
+        <text>留下你的短评</text>
+    </view>
+    <view class="right">
+        <v-like bindlike="like" like="{{favor.like_status}}" count="{{favor.fav_nums}}"/>
+        <v-share/>
     </view>
 </view>
+
+<v-mask hidden="{{!isMaskShow}}">
+    <view class="maskcontent">
+        <view class="head">
+            <text class="left">{{comments.length?'仅可点击标签+1':'还没有短评'}}</text>
+            <text class="cancel" catch:tap="onMaskHidden">取消</text>
+        </view>
+        <view class="hot">
+            <block wx:for="{{utils.limit(comments,3)}}" wx:key="">
+                <v-tag bindtagcomment="tagcomment" tag-class="{{style.foo(index)}}" content="{{item.content}}">
+                    <text class="nums" slot="after">+{{item.nums}}</text>
+                </v-tag>
+            </block>
+        </view>
+        <input
+                class="input"
+                type="text"
+                value="{{inputvalue}}"
+                placeholder="短评最多12个字"
+                placeholder-style="color: #999999;font-size: 28rpx;line-height: 1"
+                maxlength="12"
+                cursor-spacing="20rpx"
+                bindinput="input"
+                bindconfirm="confirm"
+        />
+    </view>
+</v-mask>
+
+<wxs module="style">
+    var foo = function(index){
+    return index==0?'ex-tag-first':(index==1?'ex-tag-second':'')
+    }
+    module.exports = {
+    foo: foo
+    }
+</wxs>

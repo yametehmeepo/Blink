@@ -4,6 +4,7 @@
   "usingComponents": {
     "v-like": "/component/like/index",
     "v-share": "/component/classical/share/index",
-    "v-tag": "/component/tag/index"
+    "v-tag": "/component/tag/index",
+    "v-mask": "/component/mask/index"
   }
 }

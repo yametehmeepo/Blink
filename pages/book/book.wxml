@@ -1,6 +1,6 @@
-<view class="wrap">
+<view class="wrap" wx:if="{{!isSearchPanelShow}}">
     <view class="search">
-        <view class="search-inner">
+        <view class="search-inner" catch:tap="onSearchTap">
             <image src="/images/book/search.png" mode="widthFix"/>
             <text>搜索图书名称</text>
         </view>
@@ -15,3 +15,4 @@
         </block>
     </view>
 </view>
+<v-search bindcancel="closeSearchPanel" wx:if="{{isSearchPanelShow}}"/>

@@ -1,5 +1,5 @@
 import {ClassicalModel} from '../../models/classical.js'
-import LikeModel from "../../models/like.js"
+import {LikeModel} from "../../models/like.js"
 
 
 let classicalmodel = new ClassicalModel()

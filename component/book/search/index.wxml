@@ -1,5 +1,0 @@
-<view class="container">
-    <label for="search">
-        <input id="search" class="search-input" placeholder="搜索图书名称" placeholder-style="color: #999999;font-size:28rpx;"/>
-    </label>
-</view>

@@ -1,4 +1,4 @@
-.comment-item {
+.container {
     display: inline-flex;
     flex-direction: row;
     background-color: #f7f7f7;
@@ -9,7 +9,7 @@
     margin: 0 12rpx 20rpx 0;
 }
 
-.comment-item .content {
+.container .content {
     font-size: 24rpx;
     color: #666666;
     margin: 0 12rpx 0 0;

@@ -24,4 +24,15 @@ export class BookModel extends HTTP {
             url: `/book/${id}/favor`
         })
     }
+
+    addComment(id, content) {
+        return this.request({
+            url: '/book/add/short_comment',
+            data: {
+                book_id: id,
+                content: content
+            },
+            method: "POST"
+        })
+    }
 }

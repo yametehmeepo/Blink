@@ -1,6 +1,6 @@
 import {HTTP} from "../util/http.js"
 
-export default class LikeModel extends HTTP {
+export class LikeModel extends HTTP {
     like(behavior, id, category, callback) {
         const url = behavior ? '/like' : '/like/cancel'
         this.request({

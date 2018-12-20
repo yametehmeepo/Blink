@@ -1,4 +1,4 @@
-<view class="comment-item">
+<view class="container tag-class" bind:tap="onTagTap">
     <slot name="before"></slot>
     <text class="content">{{content}}</text>
     <slot name="after"></slot>
