@@ -10,9 +10,10 @@
     </view>
     <view class="container">
         <block wx:for="{{books}}" wx:key="id">
-            <v-book bookid="{{item.id}}" title="{{item.title}}" image="{{item.image}}" author="{{item.author}}"
-                    like="{{item.fav_nums}}"/>
+            <v-book bookid="{{item.id}}" title="{{item.title}}" image="{{item.image}}" author="{{item.author}}">
+                <text class="like">{{item.fav_nums}} 喜欢</text>
+            </v-book>
         </block>
     </view>
 </view>
-<v-search bindcancel="closeSearchPanel" wx:if="{{isSearchPanelShow}}"/>
+<v-search wx:if="{{isSearchPanelShow}}" trigger="{{trigger}}" bindcancel="closeSearchPanel"/>

@@ -7,6 +7,7 @@
                     value="{{searchValue}}"
                     placeholder="搜索图书名称"
                     placeholder-style="color: #999999;font-size: 28rpx;"
+                    adjust-position="{{false}}"
                     focus="{{searchFocus}}"
                     bindinput="searchinput"
                     bindconfirm="searchconfirm"
@@ -15,12 +16,12 @@
         </view>
         <view catch:tap="onCancelTap" class="right">取消</view>
     </view>
-    <view class="content">
+    <view wx:if="{{!searching}}" class="content">
         <view class="history">
             <view class="title">历史搜索</view>
             <view class="tag-container">
                 <block wx:for="{{historySearchList}}" wx:key="">
-                    <v-tag content="{{item}}"/>
+                    <v-tag bindtagcomment="onSearchTap" content="{{item}}"/>
                 </block>
             </view>
         </view>
@@ -28,9 +29,17 @@
             <view class="title">热门搜索</view>
             <view class="tag-container">
                 <block wx:for="{{hotSearchList}}" wx:key="">
-                    <v-tag content="{{item}}"/>
+                    <v-tag bindtagcomment="onSearchTap" content="{{item}}"/>
                 </block>
             </view>
         </view>
+    </view>
+    <view wx:if="{{searchingFinished && !resultList.length}}" class="noResult">
+        <text>没有搜索到书籍</text>
+    </view>
+    <view wx:if="{{searchingFinished && resultList.length}}" class="searchingitems">
+        <block wx:for="{{resultList}}" wx:key="{{item.id}}">
+            <v-book bookid="{{item.id}}" title="{{item.title}}" image="{{item.image}}" author="{{item.author}}"/>
+        </block>
     </view>
 </view>

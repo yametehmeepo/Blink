@@ -78,7 +78,7 @@
                 value="{{inputvalue}}"
                 placeholder="短评最多12个字"
                 placeholder-style="color: #999999;font-size: 28rpx;line-height: 1"
-                maxlength="12"
+                maxlength="18"
                 cursor-spacing="20rpx"
                 bindinput="input"
                 bindconfirm="confirm"

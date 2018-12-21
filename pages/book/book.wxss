@@ -58,3 +58,11 @@ page {
     justify-content: space-between;
     padding: 0 90rpx;
 }
+
+.container .like {
+    font-size: 20rpx;
+    line-height: 28rpx;
+    color: #bbbbbb;
+    margin-top: 18rpx;
+    text-align: right;
+}

@@ -3,6 +3,6 @@
     <view class="content">
         <text class="title">{{title}}</text>
         <text class="author">{{author}}</text>
-        <text class="like">{{like}} 喜欢</text>
+        <slot/>
     </view>
 </view>
