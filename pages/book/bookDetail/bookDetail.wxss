@@ -23,9 +23,11 @@ page {
 
 .title {
     font-size: 38rpx;
-    line-height: 1;
+    line-height: 1.2;
     margin: 30rpx 0 15rpx;
     font-weight: bold;
+    padding: 0 40rpx;
+    text-align: center;
 }
 
 .author {
@@ -49,14 +51,11 @@ page {
     font-weight: bold;
 }
 
-
-/*.comment-container v-tag .comment-item:nth-of-type(1) {
-    background-color: #fffadd;
+.comment-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
-.comment-container v-tag .comment-item:nth-of-type(2) {
-    background-color: #eefaff;
-}*/
 
 .ex-tag-first {
     background-color: #fffadd !important;
@@ -69,10 +68,12 @@ page {
 .comment .nums {
     font-size: 20rpx;
     color: #bbbbbb;
+    margin-left: 12rpx;
 }
 
 .default-comment {
     display: block;
+    width: 100%;
     text-align: center;
     font-size: 24rpx;
     color: #ccc;
@@ -209,7 +210,9 @@ page {
 
 .maskcontent .hot {
     padding: 10rpx 0;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .maskcontent .hot .nums {
@@ -225,10 +228,19 @@ page {
     border-radius: 28rpx;
 }
 
+.like {
+    margin-right: 40rpx;
+}
+
+.button-img {
+    width: 28rpx;
+    height: 28rpx;
+}
 
 
-
-
+.tag {
+    margin: 0 12rpx 20rpx 0;
+}
 
 
 

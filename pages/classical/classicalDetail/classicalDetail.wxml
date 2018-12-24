@@ -12,6 +12,4 @@
     <v-music wx:if="{{type==200}}" image="{{image}}" content="{{content}}" type="{{type}}" url="{{url}}" isPlay="{{isPlay}}" currentPlay="{{currentPlay}}"
              bindplay="play"/>
     <v-verse wx:if="{{type==300}}" image="{{image}}" content="{{content}}" type="{{type}}"/>
-    <v-navi bindprev="onPrevTap" bindnext="onNextTap" class="navi" title="{{title}}" hasPrev="{{hasPrev}}" hasNext="{{hasNext}}"/>
 </view>
-

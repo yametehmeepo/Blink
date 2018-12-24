@@ -35,4 +35,16 @@ export class BookModel extends HTTP {
             method: "POST"
         })
     }
+
+    getBookCount() {
+        return this.request({
+            url: '/book/favor/count'
+        })
+    }
+
+    getMyFavor() {
+        return this.request({
+            url: '/classic/favor'
+        })
+    }
 }

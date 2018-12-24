@@ -1,0 +1,11 @@
+<wxs src="index.wxs" module="tool"/>
+<view class="container" catch:tap="onTap">
+    <view class="top">
+        <v-tag content="{{tool.changeType(type)}}"/>
+        <v-like like="{{true}}" count="{{count}}"/>
+    </view>
+    <view class="middle">
+        <image src="{{img}}" class="{{type==200?'middle-music':'middle-movie'}}"/>
+    </view>
+    <text class="bottom">{{text}}</text>
+</view>

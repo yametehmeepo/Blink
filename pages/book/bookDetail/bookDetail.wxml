@@ -13,7 +13,7 @@
             </block>
             <block wx:else>
                 <block wx:for="{{utils.limit(comments, 15)}}" wx:key="{{index}}">
-                    <v-tag tag-class="{{style.foo(index)}}" content="{{item.content}}">
+                    <v-tag tag-class="{{style.foo(index)}}" content="{{item.content}}" class="tag">
                         <text class="nums" slot="after">+{{item.nums}}</text>
                     </v-tag>
                 </block>
@@ -54,8 +54,10 @@
         <text>留下你的短评</text>
     </view>
     <view class="right">
-        <v-like bindlike="like" like="{{favor.like_status}}" count="{{favor.fav_nums}}"/>
-        <v-share/>
+        <v-like bindlike="like" like="{{favor.like_status}}" count="{{favor.fav_nums}}" class="like"/>
+        <v-button open-type="share">
+            <image slot="img" class="button-img" src="/component/images/share.png" mode="widthFix"/>
+        </v-button>
     </view>
 </view>
 
@@ -67,7 +69,7 @@
         </view>
         <view class="hot">
             <block wx:for="{{utils.limit(comments,3)}}" wx:key="">
-                <v-tag bindtagcomment="tagcomment" tag-class="{{style.foo(index)}}" content="{{item.content}}">
+                <v-tag bindtagcomment="tagcomment" tag-class="{{style.foo(index)}}" content="{{item.content}}" class="tag">
                     <text class="nums" slot="after">+{{item.nums}}</text>
                 </v-tag>
             </block>

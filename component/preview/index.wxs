@@ -1,0 +1,17 @@
+var foo = function (type) {
+    switch (type) {
+        case 100:
+            return '电影'
+        case 200:
+            return '音乐'
+        case 300:
+            return '诗句'
+        default:
+            return '无分类'
+    }
+}
+
+
+module.exports = {
+    changeType: foo
+}

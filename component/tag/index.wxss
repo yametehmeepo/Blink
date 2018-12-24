@@ -6,11 +6,9 @@
     height: 52rpx;
     border-radius: 26px;
     padding: 0 25rpx;
-    margin: 0 12rpx 20rpx 0;
 }
 
 .container .content {
     font-size: 24rpx;
     color: #666666;
-    margin: 0 12rpx 0 0;
 }

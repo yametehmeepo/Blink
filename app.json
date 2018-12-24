@@ -1,42 +1,44 @@
 {
-  "pages": [
-    "pages/classical/classical",
-    "pages/book/book",
-    "pages/like/like",
-    "pages/book/bookDetail/bookDetail"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTextStyle": "black"
-  },
-  "requiredBackgroundModes": [
-    "audio"
-  ],
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/classical/classical",
-        "text": "流行",
-        "iconPath": "images/icon/classic.png",
-        "selectedIconPath": "images/icon/classic@highlight.png"
-      },
-      {
-        "pagePath": "pages/book/book",
-        "text": "书单",
-        "iconPath": "images/icon/book.png",
-        "selectedIconPath": "images/icon/book@highlight.png"
-      },
-      {
-        "pagePath": "pages/like/like",
-        "text": "喜欢",
-        "iconPath": "images/icon/my.png",
-        "selectedIconPath": "images/icon/my@highlight.png"
-      }
-    ],
-    "color": "#c7c7c7",
-    "selectedColor": "#000",
-    "borderStyle": "black",
-    "backgroundColor": "#fff"
-  }
+	"pages": [
+		"pages/classical/classical",
+		"pages/book/book",
+		"pages/like/like",
+		"pages/book/bookDetail/bookDetail",
+		"pages/about/about",
+		"pages/classical/classicalDetail/classicalDetail"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTextStyle": "black"
+	},
+	"requiredBackgroundModes": [
+		"audio"
+	],
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/classical/classical",
+				"text": "流行",
+				"iconPath": "images/icon/classic.png",
+				"selectedIconPath": "images/icon/classic@highlight.png"
+			},
+			{
+				"pagePath": "pages/book/book",
+				"text": "书单",
+				"iconPath": "images/icon/book.png",
+				"selectedIconPath": "images/icon/book@highlight.png"
+			},
+			{
+				"pagePath": "pages/like/like",
+				"text": "喜欢",
+				"iconPath": "images/icon/my.png",
+				"selectedIconPath": "images/icon/my@highlight.png"
+			}
+		],
+		"color": "#c7c7c7",
+		"selectedColor": "#000",
+		"borderStyle": "black",
+		"backgroundColor": "#fff"
+	}
 }

@@ -12,7 +12,7 @@ export class ClassicalModel extends HTTP {
         })
     }
 
-    getCurrent(index, type, id, callback) {
+    getCurrent(type, id, callback) {
         this.request({
             url: `/classic/${type}/${id}`,
             success: res => {

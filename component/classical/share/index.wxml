@@ -1,5 +1,0 @@
-<view class="container">
-    <button open-type="share" plain>
-        <image src="/component/images/share.png" mode="widthFix"/>
-    </button>
-</view>

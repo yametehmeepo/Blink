@@ -1,5 +1,5 @@
-import {ClassicalModel} from '../../models/classical.js'
-import {LikeModel} from "../../models/like.js"
+import {ClassicalModel} from '../../../models/classical.js'
+import {LikeModel} from "../../../models/like.js"
 
 
 let classicalmodel = new ClassicalModel()
@@ -12,8 +12,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-        hasNext: false,
-        hasPrev: true,
         isPlay: false,
     },
 
@@ -21,11 +19,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        classicalmodel.getLatest(res => {
-            this.setData({
-                ...res,
-                hasPrev: classicalmodel._hasPrev(res.index)
-            })
+        const {id, type} = options
+        classicalmodel.getCurrent(type, id, (res) => {
+            this.setData({...res})
         })
         BAPManager.onPlay(() => {
             let currentPlay = BAPManager.src == this.data.url
@@ -65,46 +61,6 @@ Page({
                 this.setData({...res})
             })
         })
-    },
-    onNextTap: function (e) {
-        let index = this.data.index + 1
-        if (this._check(index)) {
-            return
-        }
-        this._updateClassical('next')
-    },
-    onPrevTap: function (e) {
-        let index = this.data.index - 1
-        if (this._check(index)) {
-            return
-        }
-        this._updateClassical('previous')
-    },
-    _updateClassical(NextOrPrev) {
-        classicalmodel.getClassical(this.data.index, NextOrPrev, res => {
-            let currentPlay = BAPManager.src == res.url && this.data.isPlay
-            this.setData({
-                ...res,
-                hasPrev: classicalmodel._hasPrev(res.index),
-                hasNext: classicalmodel._hasNext(res.index),
-                currentPlay: currentPlay
-            })
-        })
-    },
-    _check(index) {
-        let res = classicalmodel._checkStorage(index)
-        if (res) {
-            let currentPlay = BAPManager.src == res.url && this.data.isPlay
-            this.setData({
-                ...res,
-                hasPrev: classicalmodel._hasPrev(res.index),
-                hasNext: classicalmodel._hasNext(res.index),
-                currentPlay: currentPlay
-            })
-            return true
-        } else {
-            return false
-        }
     },
     play() {
         const {isPlay, currentPlay, title, url} = this.data

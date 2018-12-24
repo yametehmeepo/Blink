@@ -1,2 +1,36 @@
-<!--pages/like/like.wxml-->
-<text>pages/like/like.wxml</text>
+<view class="container">
+    <view class="head">
+        <image class="bg" src="/images/like/bg01.png" mode="widthFix"/>
+        <view class="about">
+            <view class="left" catch:tap="onAboutTap">
+                <image src="/images/like/icon_about.png"/>
+                <text>关于我们</text>
+            </view>
+            <view class="right">
+                <text class="number">{{bookCount}}</text>
+                <text class="text">我的书单</text>
+            </view>
+        </view>
+        <view class="avatar">
+            <block wx:if="{{!avatar}}">
+                <v-button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                    <view slot="img" class="clickme">Click Me</view>
+                </v-button>
+            </block>
+            <block wx:else>
+                <image class="userinfo-avatar" src="{{avatar}}"/>
+                <text class="userinfo-nickname">{{nickname}}</text>
+            </block>
+        </view>
+    </view>
+    <div class="like-container">
+        <image src="/images/like/like-tit.png" class="title" mode="widthFix"/>
+        <view class="preview-container">
+            <block wx:for="{{myFavorClassicals}}" wx:key="{{index}}">
+                <v-preview bindfavor="onFavorTap" data-item="{{item}}" like="{{item.like_status}}" count="{{item.fav_nums}}" text="{{item.content}}"
+                           img="{{item.image}}"
+                           type="{{item.type}}"/>
+            </block>
+        </view>
+    </div>
+</view>

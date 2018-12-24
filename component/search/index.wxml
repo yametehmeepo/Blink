@@ -21,7 +21,7 @@
             <view class="title">历史搜索</view>
             <view class="tag-container">
                 <block wx:for="{{historySearchList}}" wx:key="">
-                    <v-tag bindtagcomment="onSearchTap" content="{{item}}"/>
+                    <v-tag bindtagcomment="onSearchTap" content="{{item}}" class="tag"/>
                 </block>
             </view>
         </view>
@@ -29,7 +29,7 @@
             <view class="title">热门搜索</view>
             <view class="tag-container">
                 <block wx:for="{{hotSearchList}}" wx:key="">
-                    <v-tag bindtagcomment="onSearchTap" content="{{item}}"/>
+                    <v-tag bindtagcomment="onSearchTap" content="{{item}}" class="tag"/>
                 </block>
             </view>
         </view>
